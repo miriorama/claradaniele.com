@@ -769,10 +769,18 @@
       columns[index % colCount].appendChild(item);
     });
   }
-
+let prevWidth = window.innerWidth;
   window.addEventListener('load', renderProjects);
   window.addEventListener('resize', () => {
+    const currentWidth = window.innerWidth;
+
+  if (currentWidth > prevWidth) {
     clearTimeout(window.__resizeTimeout);
     window.__resizeTimeout = setTimeout(renderProjects, 200);
+  }
+
+  prevWidth = currentWidth;
+
+
   });
 </script>
