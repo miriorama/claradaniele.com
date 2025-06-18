@@ -3,97 +3,776 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clara Daniele</title>
-    <style>
-
-    /* RESET */
-    *,*:before,*:after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    html {
-        -webkit-text-size-adjust: 100%;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-tap-highlight-color: transparent;
-        -ms-text-size-adjust: 100%;
-        font-synthesis: none;
-        text-rendering: optimizeLegibility;
-        scroll-behavior: smooth;
-    }
-
-    h1,h2,h3,h4,p,ul,ol {
-        display: block;
-        font-size: inherit;
-    }
-
-    img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-        border: 0;
-    }
-
-    a {
-        color: inherit;
-        transition: .2s;
-        outline: 0;
-        text-decoration: none;
-        cursor:pointer;
-    }
-
-        body {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        main {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: calc(100vh - 100px);
-            width: 100vw;
-            font-size: 1.4rem;
-
-            span{
-                display: inline-block;
-                font-style: italic;
-                font-weight: bold;
-                color: #333;
-                text-align: right;
-                width: 100%;
-            };
-        }
-        footer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            height: 100px;
-            width: 100%;
-            opacity: 0.5;
-        }
-    </style>
+    <title>Clara Daniele | Artista</title>
+    <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
+    <header>
+        <h1>Clara Daniele</h1>
+        <nav>
+            <ul>
+                <li><a onclick="Clara.view('chi-sono')">Chi sono</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <div>
+        <div class="intro-negative">
             Mi interessa la crepa che celebra un'estetica dell'imperfezione, la ferita che fa passare e scompone il raggio di luce.
-            <br><span>Clara Daniele</span>
+        </div>
+        <div class="project-list full" >
+            <div class="project-item" onclick="Clara.view('intima-materia')">
+                <div class="project-img" style="height:250px;background-image: url(img/intima-materia/intima-materia-1.jpg);"></div>
+                Intima Materia
+                <div class="project-item-year">2023</div>
+            </div>
+
+            <div class="project-item" onclick="Clara.view('la-forme-fermee')">
+                <div class="project-img" style="height:310px;background-image: url(img/la-forme-fermee/la-forme-fermee-1.jpg);"></div>
+                La forme fermèe
+                <div class="project-item-year">2021</div>
+            </div>
+
+            <!-- colonna 2-->
+                <div class="project-item" onclick="Clara.view('sedimenti')">
+                <div class="project-img" style="height:400px;background-image: url(img/sedimenti/sedimenti-1.jpg);"></div>
+                Sedimenti
+                <div class="project-item-year">2021</div>
+            </div>
+            <div class="project-item" onclick="Clara.view('faccia')">
+                <div class="project-img" style="height:180px;background-image: url(img/faccia/faccia-1.jpg);"></div>
+                Io sono l'altra faccia di te
+                <div class="project-item-year">2019</div>
+            </div>
+            <div class="project-item" onclick="Clara.view('300-grammi')">
+                <div class="project-img" style="height:400px;background-image: url(img/300-grammi/300-grammi-1.jpg);"></div>
+                300 grammi
+                <div class="project-item-year">2019</div>
+            </div>
+            <div class="project-item" onclick="Clara.view('ex-voto')">
+                <div class="project-img" style="height:350px;background-image: url(img/ex-voto/ex-voto-1.jpg);"></div>
+                Ex Voto
+                <div class="project-item-year">2019</div>
+            </div>
+            <div class="project-item" onclick="Clara.view('legami')">
+                <div class="project-img" src="img/legami/legami-1.jpg" style="height:200px;background-image: url(img/legami/legami-1.jpg);"></div>
+                Legami
+                <div class="project-item-year">2018</div>
+            </div>
+
+            <!-- colonna 3-->
+            <div class="project-item" onclick="Clara.view('lettera-occhi')">
+                <div class="project-img" src="img/lettera-occhi/lettera-occhi-1.jpg" style="height:280px;background-image: url(img/lettera-occhi/lettera-occhi-1.jpg);"></div>
+                Lettera dai Tuoi Occhi
+                <div class="project-item-year">2018</div>
+            </div>
+            <div class="project-item" onclick="Clara.view('attraverso')">
+                <div class="project-img" src="img/attraverso/attraverso-2.jpg" style="height:200px;background-image: url(img/attraverso/attraverso-2.jpg);"></div>
+                Attraverso
+                <div class="project-item-year">2018</div>
+            </div>
+            <div class="project-item" onclick="Clara.view('vanitas')">
+                <div class="project-img" src="img/vanitas/vanitas-1.jpg" style="height:200px;background-image: url(img/vanitas/vanitas-1.jpg);"></div>
+                Vanitas Vanitatum et Omnia Vanitas
+                <div class="project-item-year">2018</div>
+            </div>
+
+            <!-- colonna 3-->
+            <div class="project-item" onclick="Clara.view('no-violence')">
+                <div class="project-img" src="img/no-violence/no-violence-1.jpg" style="height:200px;background-image: url(img/no-violence/no-violence-1.jpg);"></div>
+                Image no violence on woman
+                <div class="project-item-year">2018</div>
+            </div>
+            <div class="project-item" onclick="Clara.view('ricorda')">
+                <div class="project-img" src="img/ricorda/ricorda-1.jpg" style="height:200px;background-image: url(img/ricorda/ricorda-1.jpg);"></div>
+                Ricorda di essere stato straniero
+                <div class="project-item-year">2017</div>
+            </div>
+            <div class="project-item" onclick="Clara.view('mnemosine')">
+                <div class="project-img" src="img/mnemosine/mnemosine-1.jpg" style="height:200px;background-image: url(img/mnemosine/mnemosine-1.jpg);"></div>
+                Mnemosine
+                <div class="project-item-year">2016-2017</div>
+            </div>
+            <div class="project-item" onclick="Clara.view('chrysalis')">
+                <div class="project-img" style="height:200px;background-image: url(img/chrysalis/chrysalis-1.jpg);"></div>
+                Chrysalis
+                <div class="project-item-year">2016</div>
+            </div>
+            <div class="project-item" onclick="Clara.view('radici')">
+                <div class="project-img" style="height:200px;background-image: url(img/radici/radici-1.jpg);"></div>
+                Radici
+                <div class="project-item-year">2015-2016</div>
+            </div>
         </div>
     </main>
     <footer>
-        © 2025 Clara Daniele - clara.daniele@yahoo.it
+        <div>© <span class="year"></span> Clara Daniele</div>
+        <div>clara.daniele@yahoo.it</div>
     </footer>
+
+    <div class="project" data-project="300-grammi">
+        <div class="project-close" onclick="Clara.view('/')">✕</div>
+        <div class="project-content">
+            <div class="project-header">
+                <div class="project-title">300 grammi</div>
+                <div class="project-subtitle">progetto fotografico / stampa su dimensioni variabili</div>
+                <div class="project-year">2019</div>
+            </div>
+            <div class="project-row">
+                <div class="project-intro">
+                    <div>Cuore.</div>
+                    <img class="project-img double" src="img/300-grammi/300-grammi-1.jpg" alt="">
+                    <div>Organo muscolare cavo.</div>
+                    <div>300 grammi.</div>
+                </div>
+                <div class="project-description">
+                    <div>
+                        Un peso minimo per un organo capace di ricevere sangue e di rilasciarlo.
+                        <br>Ricevere e rilasciare in un continuum che non smette mai e si ferma solo con la morte.
+                        <br>Con la morte il sangue staziona all'interno di questo muscolo.
+                        <br>Si secca.
+                    </div>
+                    <img class="project-img" src="img/300-grammi/300-grammi-2.jpg" alt="">
+
+                    <div>
+                        Il cuore deve essenzialmente accogliere e lasciare fluire, si apre costantemente almeno 70 volte al minuto, 4000 volte all'ora per un totale di circa centomila battiti al giorno.
+                        <br>Il sangue può scorrere solo in una direzione e quindi il flusso vitale non può mai tornare indietro e lo fa percorrendo circa ventimila chilometri al giorno.
+                    </div>
+                    <img class="project-img" src="img/300-grammi/300-grammi-3.jpg" alt="">
+                    <img class="project-img" src="img/300-grammi/300-grammi-5.jpg" alt="">
+
+                    <div>
+                        Mi interessava toccare un cuore, pesarlo tra le mani, entrare in contatto con il sangue, fluido misterioso e nascosto, portatore di molteplici significati mitici e rituali, oltre che storici e culturali.
+                        <br>Rose George nel suo libro Nine pints (2018) scrive che "il ferro contenuto nel nostro sangue viene dalla morte delle supernove, come tutto il ferro del nostro pianeta. Questo liquido rosso vivo, pompato dal cuore, contiene sali e acqua, come il mare dal quale probabilmente siamo venuti".
+                    </div>
+                    <img class="project-img" src="img/300-grammi/300-grammi-7.jpg" alt="">
+                    <img class="project-img" src="img/300-grammi/300-grammi-9.jpg" alt="">
+
+                    <div>
+                        Il lavoro fotografico è stato realizzato con un cuore di maiale adulto.
+                        <br>Tenerlo tra le mani, sentirne il peso, accudirlo, cucirlo e custodirlo è stato come prendermi cura del mio stesso cuore, riconoscendolo nella manifestazione esteriore di un altro essere, in un respiro ampio, ancestrale e rituale.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project" data-project="chrysalis">
+        <div class="project-close" onclick="Clara.view('/')">✕</div>
+        <div class="project-content">
+            <div class="project-header">
+                <div class="project-title">Chrysalis</div>
+                <div class="project-subtitle">progetto fotografico / stampa fine art su carta cotone</div>
+                <div class="project-year">2016</div>
+            </div>
+            <div class="project-row">
+            <div class="project-intro">
+                <div>Ogni opera</div>
+                <img class="project-img full" src="img/chrysalis/chrysalis-1.jpg" alt="">
+                <div>è il processo </div>
+                <div>di una ricerca</div>
+            </div>
+            <div class="project-description">
+                <div>
+                    Non lo sapeva con certezza, ma parlava di una forza scatenante, capace di allargare la coscienza.
+                    <br>Questo è stato Chrysalis, un espandersi di possibilità, nate principalmente dall'osservazione delle mute dei bachi da seta e cercando di andare in sincrono con la loro tempistica di mutamento.
+                </div>
+                <img class="project-img" src="img/chrysalis/chrysalis-2.jpg" alt="">
+                <span></span>
+                <div>
+                    <span>Nello scheletro cartilaginoso dei bachi da seta si addensa una memoria di migliaia di anni, le mute si ripetono sempre uguali, seguendo il ciclo dell'albero di riferimento: il gelso.</span>
+                    <span>Sono piccoli miracoli e accadono in uno stato di attesa e di silenzio.</span>
+                </div>
+                <img class="project-img" src="img/chrysalis/chrysalis-3.jpg" alt="">
+                <div>
+                    <span>Le quattro mute che i bachi affrontano sono in parte dolorose, per ognuna il baco si immobilizza e aspetta che avvenga il passaggio allo stadio successivo.</span>
+                    <span>Nei miei scatti ho voluto rendere il senso di questa attesa e insieme quello di una sofferenza che ho percepito lieve perché portatrice di una maturazione, di cambiamento.</span>
+                </div>
+                <div>
+                    <span>L'attesa ha portato con sé anche lo stupore: come fa un essere così fragile a creare così tanta bellezza procedendo verso una dimensione così grande, una dimensione che ha un sapore di assoluto?</span>
+                    <span>Attraverso la storia dei bachi ho cercato di narrare parte della mia storia.</span>
+                </div>
+                <img class="project-img" src="img/chrysalis/chrysalis-4.jpg" alt="">
+                <span>Ho lavorato facendo degli autoscatti in movimento, eseguiti usando tempi lunghi di posa, e ho cercato di riportare il processo delle quattro mute in fotografia, diventando consapevole a poco a poco della mia stessa trasformazione.</span>
+                <span>Attraverso l'oro dei fili di seta, che piano piano costruivano il rifugio dal mondo, ho curato me stessa, attraverso la vita di questi insetti millenari sono ritornata indietro nel tempo, ai racconti narrati da mia nonna in qualche pomeriggio d'estate, quelli legati ad una giovinezza passata a lavorare alla filanda: il cerchio si chiude, la memoria si trasforma e prende nuove strade, muta, come fanno tutte le crisalidi.</span>
+            </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="project" data-project="ex-voto">
+        <div class="project-close" onclick="Clara.view('/')">✕</div>
+        <div class="project-content">
+            <div class="project-header">
+                <div class="project-title">Ex voto</div>
+                <div class="project-subtitle">installazione mixed media<br>Galleria Mémoire de l'Avenir, Parigi</div>
+                <div class="project-year">1-30 marzo 2019</div>
+            </div>
+            <div class="project-row">
+                <div class="project-intro">
+                    <div>«È inesprimibile</div>
+                    <img class="project-img" src="img/ex-voto/ex-voto-5.jpg" alt="">
+                    <div>il modo con cui Dio</div>
+                    <div>ferisce l'anima»</div>
+                </div>
+                <div class="project-description">
+                    <div>
+                        Testo critico a cura di Alessandra Spigai.<br>Ne "Il castello interiore" Santa Teresa (1515-1582) scrive: «È inesprimibile il modo con cui Dio ferisce l'anima.
+                        Il tormento è così vivo che l'anima esce fuori di sé, benché insieme sia tanto dolce da non poter essere paragonato ad alcun piacere sulla terra.
+                        Perciò, l'anima vorrebbe star sempre morendo per la forza di quel male. Lo spasimo della ferita era così vivo che mi faceva uscire nei gemiti, ma insieme pure tanto dolce da impedirmi di desiderarne la fine e di cercare altro diversivo fuori che Dio.
+                        Benché non sia un dolore fisico ma spirituale, vi partecipa un poco anche il corpo, anzi molto. Allora tra l'anima e Dio passa come un soavissimo idillio».
+                    </div>
+                    <img class="project-img" src="img/ex-voto/ex-voto-1.jpg" alt="">
+                    <div>
+                        Nell'opera Ex Voto, ultimo lavoro di Clara Daniele, la raccolta, la scelta e l'intervento coercitivo sulle icone religiose di sante e madonne è una manipolazione artistica tacitativa e seducente.
+                        <p>Agisce sulla assodata angelicazione della attività/sessualità dell'immagine della donna santa tacitandole ogni possibilità attraverso nastri adesivi neri che chiudono occhi e mani,
+                            cavi e filamenti che trattengono movimenti ed intenzioni, cancellazioni e utilizzo dell'usura del tempo come strumento di segno.</p>
+                        </div>
+                    <img class="project-img" src="img/ex-voto/ex-voto-2.jpg" alt="">
+                    <div>
+                        Questi tiranti rossi che cuciono gli occhi sono lacrime di sangue che attraversano e sottolineano quella che viene detta dai maestri spirituali la "trasverberazione"
+                        (dal latino "verberatio", "colpo", "ferita", con la preposizione "trans", cioè "che attraversa") che è "l'essere toccati e come attraversati dall'amore divino che ferisce e dona una dolcezza che nessun amore terreno al mondo potrebbe mai donare".
+                        <p>Lo sguardo dell'osservatore che si pone su quest'opera scorre da donne a madri e madonne, quasi schivando istintivamente l'immagine del maschio, scivola tra una scoperta e un'altra dei vari interventi e modificazioni sulle icone mistiche.</p>
+                    </div>
+                    <img class="project-img" src="img/ex-voto/ex-voto-3.jpg" alt="">
+                    <img class="project-img" src="img/ex-voto/ex-voto-4.jpg" alt="">
+                    <div>
+                        Azione che apparentemente mima un lieve camminare dell'artista in punta di piedi nelle esperienze della vita, che si limita a raccogliere e correggere a suo modo, ma che in realtà significa una presenza seducente ben più forte,
+                        in quanto ella trasforma intensamente gli elementi femminili sul suo percorso, rendendoli altri da sè, a tratti ambigui, sospesi, trattenuti, e offrendo con questo gesto artistico un'impronta radicale, una suggestione d'estasi viscerale
+                        e controversa che arriva a suggerire concetti masochistici, o almeno profondamente fisicamente appassionati. Nell'opera Ex voto Clara Daniele mette le mani sull'alleanza dello spirito e del corpo della donna con la divinità,
+                        superando la collocazione temporale del femminile, e stimolando sull'osservatore nuovi quesiti ed enigmi che sono il vero cuore dell'arte contemporanea.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project" data-project="intima-materia">
+        <div class="project-close" onclick="Clara.view('/')">✕</div>
+        <div class="project-content">
+            <div class="project-header">
+                <div class="project-title">Intima materia</div>
+                <div class="project-subtitle">
+                    Clara Daniele | <a href="https://michelebruna.com/?fe2o3" target="_blank">Michele Bruna</a>
+                    <br>grandArte HELP humanity.ecology.liberty.politics
+                </div>
+                <div class="project-year">
+                    5/27 novembre 2022 | Cuneo, Palazzo Samone
+                    <br>18 settembre/2 ottobre 2023 | Parigi, 59 Rivoli
+                </div>
+            </div>
+            <div class="project-row">
+                <div class="project-intro">
+                    <div>Nuove forme</div>
+                        <img class="project-img full" src="img/intima-materia/intima-materia-1.jpg" alt="">
+                    <div>tra ferro</div>
+                    <div>e cuore.</div>
+                </div>
+                <div class="project-description">
+                    <div>
+                        Nella sua ‘Breve storia del sangue’, Rose George scrive che "il ferro contenuto nel nostro sangue viene dalla
+                        morte delle supernove, come tutto il ferro del nostro pianeta" L’elemento ferroso, dunque, come un legame tra
+                        l’immensamente grande e l' infinitamente piccolo, come un unico filo conduttore tra l’intimità insondabile
+                        dell’artista e la dimensione materica della sua azione.
+                    </div>
+                    <div>
+                        Clara Daniele e Michele Bruna, in questo loro poderoso incontro, esplorano con insolita forza il pulviscolo
+                        cosmico che aleggia intorno a noi. Il metallo e la fibra, il tessuto e la carta, l’acqua che tutto lega e tutto
+                        trasforma. Anche la polvere di stelle, raccolta dal pavimento come residuo del processo artistico dell’uno,
+                        diviene pigmento e colore per la creazione dell’altra. Come nella migliore tradizione artistica, entrambi
+                        rimuovono strati. Lui di materiale ferroso e cartaceo, velocizzando un ossidazione che diventerà sede per
+                        figure astratte e irripetibili, lei di pelle e ricordi, per lasciare intravedere l' interno di un corpo che è anche
+                        dolore.
+                    </div>
+                    <img class="project-img" src="img/intima-materia/intima-materia-2.jpg" alt="">
+                    <div>
+                        Il risultato è una materia intima che si porta addosso tutte le materie intime possibili: figure e sogni, memorie e
+                        turbamenti, tradizioni e legami. L’immensamente grande e l' infinitamente piccolo racchiusi in un discorso
+                        complementare e senza fine, libero di sperimentare nuove forme di associazione tra ferro e cuore, riscattando
+                        l’elemento umano dalla materia fredda delle supernove.
+                        <br><div class="firma">Sandro Bozzolo</div>
+                    </div>
+                    <img class="project-img" src="img/intima-materia/intima-materia-3.jpg" alt="">
+                    <div>
+                        La ruggine | il ferro | il sangue
+                        <br>Il tessuto | il bianco | la memoria
+
+                        <br><br>Questi elementi si sono mischiati fino a legarsi indissolubilmente nei mesi di lavoro e scambio con Michele
+                        Bruna negli spazi interni ed esterni condivisi.
+                        Da subito la ricerca di Clara Daniele ha trasportato la materia esterna nell'intimità interna del corpo, nel senso
+                        ampio del termine.
+                    </div>
+                    <img class="project-img" src="img/intima-materia/intima-materia-4.jpg" alt="">
+                    <div>
+                        Il tessuto, strappato in lunghe bende e impastato di acqua e farina, è servito come materiale scultoreo per
+                        creare casse toraciche cave, lasciando intravedere l' ossidazione interna generata dal trascorrere del tempo,
+                        dal sangue ferroso e dalla vita.
+                        Il lenzuolo integro, invece, è stato utilizzato come sindone laica per accogliere e trattenere i segni astratti che
+                        la ruggine ha generato nei mesi di lavorazione al progetto, quasi come un operazione fotografica di
+                        esposizione multipla.
+                    </div><div>
+                        I lavori precedenti dell' artista, quelli incentrati sulla sutura delle ferite, riaffiorano attraverso il nuovo tentativo di
+                        salvare e ricucire la materia ferrosa ormai ossidata e impossibilitata a rimanere integra, generando un ulteriore
+                        stratificazione di senso che si fa soglia per nuove possibilità espressive.
+                        video: https://youtu.be/WfmReZricdo
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project" data-project="project-list">
+        <div class="project-close" onclick="Clara.view('/')">✕</div>
+        <div class="project-content">
+            <div class="project-header">
+                <div class="project-title">Progetti artistici</div>
+                <div class="project-subtitle"></div>
+                <div class="project-year"></div>
+            </div>
+            <div class="project-row">
+                <div class="project-intro">
+                </div>
+                <div class="project-description">
+
+                    <img class="project-img" src="img/test/test-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project" data-project="chi-sono">
+        <div class="project-close" onclick="Clara.view('/')">✕</div>
+        <div class="project-content">
+            <div class="project-header">
+                <div class="project-title">Chi sono</div>
+                <div class="project-subtitle">clara.daniele@yahoo.it</div>
+            </div>
+            <div class="project-row">
+                <div class="project-intro">
+                    <div></div>
+                    <img class="project-img full" src="img/chi-sono.jpg" alt="">
+                    <div></div>
+                </div>
+                <div class="project-description">
+                    <div>
+                        Laureata in Storia e critica del teatro al Dams di Torino con una tesi sul teatro d'avanguardia di Perla Peragallo e Leo de Berardinis, dal 2005 al 2015 lavora con i tessuti sostenibili in un'ottica di rigenerazione e di recupero, cercando di andare alla radice della storia che il materiale tessile porta con sé.
+                        <br>La propria ricerca personale parte dunque da una relazione ibrida e contaminata tra teatro, sartoria e fotografia, mezzi espressivi che usa per portare avanti la propria ricerca personale.
+                        <br>Nel 2013 vince il primo premio del Concorso Nazionale Moda Etica, organizzato e patrocinato dalla Direzione Generale degli archivi del Ministero per i beni e le attività culturali e dal Comune di Firenze, presentando parte della collezione “Radici”, realizzata interamente in tela di casa, la tela di lino e canapa tessuta a mano e usata come corredo nuziale dalle giovani spose.
+                        <br>A giugno 2014 presenta a Palazzo Pitti a Firenze la Collezione Kimono, riadattando e decostruendo kimono dei primi del Novecento in collaborazione con la Galleria del Costume di Palazzo Pitti e la Soprintendenza per il Patrimonio Storico, Artistico e Etnoantropologico e per il Polo museale della città di Firenze.
+                        <br>Nel 2015, per sei mesi, cura l'installazione “Radici” in un bosco abbandonato.
+                        <br>L'installazione, realizzata con gli abiti bianchi presentati al concorso di Moda Etica, ha dialogato per 180 giorni col bosco e col passare dei mesi si è trasformato, si è integrato sempre di più con lo spazio naturale circostante, interagendo con le persone di passaggio attraverso un diario di bordo e un reportage fotografico dilatato nel tempo.
+                    </div>
+                    <div>
+                        Da luglio a settembre 2016 realizza e espone il progetto fotografico Chrysalis | studio per un mutamento | presso le Terme Reali di Valdieri, mostra che verrà presentata anche a giugno 2017 presso il Filatoio Rosso di Caraglio e all'Officina delle Arti di Cuneo.
+                        <br>Da settembre 2016 lavora al work in progress Mnemosine |studio per una cura| un lavoro personale e collettivo sulla memoria e sul passato familiare, realizzato in forma di performance e installazione operando con tecniche miste sui lenzuoli tramandati in famiglia di generazione in generazione.
+                        <br>Ad aprile 2017 viene selezionata nel Circuito Off dell'Edizione 2017 del festival Fotografia Europea di Reggio Emilia col progetto Chrysalis.
+                        <br>Il 21 settembre 2017, presso la galleria Il Fondaco di Bra, esegue la performance “Mnemosine” |Studio per una cura|
+                        <br>Ad ottobre 2017 vince il primo premo nella sezione Arti Visive del Concorso “Ricorda di essere stato straniero” della Fondazione Nuto Revelli.
+                        <br>A novembre 2017 e vince il Concorso “Image no violence on woman” indetto dall' associazione ArTs di Trieste.
+                        <br>A settembre 2018 presenta a Trieste la sua mostra personale “Lettera dai tuoi occhi”, curata da Alessandra Spigai.
+                        <br>Nel mese di marzo 2019 espone il progetto ExVoto presso la galleria Mémoire de l'Avenir di Parigi nella collettiva La femme du futur.
+                        <br>Nel mese di giugno 2021 partecipa alla Residenza Artistica Terre e Trame di Mongia e espone la sua opera Sedimenti | di generazione in generazione | presso l'antica sede della confraternita di Santa Caterina, Lisio.
+                    </div>
+                    <div>
+                        Durante l'anno di pandemia studia e cura, insieme ad Alessandra Spigai, il progetto artistico “La forme fermèe” uno studio che parte dalla figura di Camille Claudel per indagare in maniera estesa la condizione dell'artista donna, in collaborazione con l'Associazione ArTS - comparison of contemporary arts – Trieste.
+                        <br>A novembre 2022 presenta a Cuneo, nelle sale di palazzo Samone, il progetto "Intima materia" insieme all'artista Michele Bruna all'interno della rassegna Grand'Arte HELP 2022.
+                        <br>A marzo 2023, in collaborazione con l’Accademia di Belle Arti di Brera e col collettivo quiDOVE presenta, per il progetto conTENERE, parte delle opere di Intima Materia realizzate con Michele Bruna.
+                        <br>A settembre 2023 col progetto Intima Materia è ospite, insieme a Michele Bruna e Sandro Bozzolo, presso la galleria 59 Rivoli a Parigi.
+                    </div>
+                    <img class="project-img" src="img/test/test-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project" data-project="">
+        <div class="project-close" onclick="Clara.view('/')">✕</div>
+        <div class="project-content">
+            <div class="project-header">
+                <div class="project-title"></div>
+                <div class="project-subtitle"></div>
+                <div class="project-year"></div>
+            </div>
+            <div class="project-row">
+                <div class="project-intro">
+                    <div></div>
+                    <img class="project-img" src="img/test/test-5.jpg" alt="">
+                    <div></div>
+                </div>
+                <div class="project-description">
+                    <div>
+
+                    </div>
+                    <img class="project-img" src="img/test/test-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project" data-project="la-forme-fermee">
+        <div class="project-close" onclick="Clara.view('/')">✕</div>
+        <div class="project-content">
+            <div class="project-header">
+                <div class="project-title">La forme fermèe</div>
+                <div class="project-subtitle">
+                    Progetto artistico a due voci |Alessandra Spigai e Clara Daniele
+                    <br>in collaborazione con l'Associazione ArTS - comparison of contemporary arts - Trieste
+                </div>
+                <div class="project-year">
+                    18 marzo - 6 apile 2021 (annullata causa covid)
+                    <br>Mostra a Trieste, sala Veruda
+                </div>
+            </div>
+            <div class="project-row">
+                <div class="project-intro">
+                    <div>Camille Claudel </div>
+                        <img class="project-img full" src="img/la-forme-fermee/la-forme-fermee-1.jpg" alt="">
+                    <div>madre</div>
+                    <div>delle sculticri</div>
+                </div>
+                <div class="project-description">
+                    <div>
+                        L'esposizione delle due artiste è un dialogo sul cardine centrale della ?gura di Camille Claudel, nell'ottica di Camille artista bloccata/"fermata" nella sua espressione e produzione attraverso l'internamento coatto in manicomio, su richiesta della madre e del fratello, in seguito alla diagnosi di paranoia ossessiva.
+                    </div>
+                    <img class="project-img" src="img/la-forme-fermee/la-forme-fermee-2.jpg" alt="">
+                    <div>L'indagine artistica di Daniele e Spigai vuole stimolare un pensiero e il porsi domande che spaziano dalla responsabilità della società sulla produzione artistica femminile nella storia, al ricorso al disagio mentale ( quando non alla forzata vocazione spirituale, che portava al convento) per "arginare" la donna artista il cui comportamento e visione della vita risiede al di fuori degli schemi culturali dell'epoca.
+                        La mostra risulta un percorso doppio che si intreccia tra quesiti sociali, risultati artistici e richiami al femminino quale forza artistica ed elemento disturbante.
+                    </div>
+                    <img class="project-img" src="img/la-forme-fermee/la-forme-fermee-3.jpg" alt="">
+                    <div>
+                        Camille Claudel (Fère-en-Tardenois, 1864 -Montfavet, 1943) madre delle scultrici, vive durante la Belle Époque francese dove la realizzazione dell'identità femminile e quanto più da artista, era molto dif?cile. Nonostante questo riuscì ad affermarsi ritagliandosi uno spazio di rilievo nell'arte attraverso una copiosa e acclamata produzione, e anche nonostante gli snodi esistenziali che in?uenzarono la sua vita e la suo percorso artistico: il problematico e quasi inesistente rapporto con la madre, il forte legame con il fratello Paul, diventato esponente del cattolicesimo intransigente della società francese dei tempi, e la famosa storia d'amore (e di odio) con il grande scultore Rodin. In?ne la diagnosticata malattia mentale e l'internamento in manicomio, sembra su richiesta della madre e del fratello, per trent'anni, ?no alla sua morte.
+                    </div>
+                    <div>
+                        Camille, secondo un giornalista dell'epoca, Paul Théodore Vibert, era stata internata in modo arbitrario per psicosi da persecuzione solo perché la sua famiglia si vergognava di lei e dei suoi comportamenti anticonvenzionali.
+                        Le opere della mostra sono: scultura, video, fotogra?a, pittura, installazione.
+                        <br>Lo spazio alle opere in mostra viene dedicato interamente al tema per trattarne tutte le possibili frastagliature e declinazioni, una sorta di capsula spazio temporale artistica, che permetta di esplorare il discutibile con?ne tra normalità, follia, tra gesto artistico e vita sociale, tra condizione della donna controllata e libera.
+                        <br>La follia o cosidetta tale, diventa un cavallo di Troia, che porta nelle nostre vite, domande e suggestioni, analisi e approfondimenti sull'arte, sull'omologazione, sul sistema sociale attraverso la storia.
+                    </div>
+                    <img class="project-img" src="img/la-forme-fermee/la-forme-fermee-4.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project" data-project="sedimenti">
+        <div class="project-close" onclick="Clara.view('/')">✕</div>
+        <div class="project-content">
+            <div class="project-header">
+                <div class="project-title">Sedimenti</div>
+                <div class="project-subtitle">
+                    Installazione site specifici composta da garze, lenzuoli e camicie antiche in lino e canapa.
+                    <br>Performance 25 settembre 2021- chiesa di Santa Caterina, Lisio.
+                </div>
+                <div class="project-year">Restituzione della Residenza Artistica Terre di Mongia 2021</div>
+            </div>
+            <div class="project-row">
+                <div class="project-intro">
+                    <div>Testimonianza</div>
+                    <img class="project-img full" src="img/sedimenti/sedimenti-1.jpg" alt="">
+                    <div>di una memoria</div>
+                    <div>collettiva</div>
+                </div>
+                <div class="project-description">
+                    <div>
+                    I lenzuoli e le camicie da notte di questa installazione parlano delle storie e delle persone della Valle: sono la testimonianza di una memoria collettiva e ci riportano a fare diretta esperienza delle nostre origini.
+                    Mantengono il ricordo dei corpi che li hanno usati e vissuti ed è con questi segni che mi interessa provare a lavorare.
+                    Questi semplici pezzi di stoffa possono suscitare una risposta emotiva immediata: riescono a metterci in comunicazione con l'esperienza del nostro tempo limitato di essere al mondo.
+                    </div>
+                    <img class="project-img" src="img/sedimenti/sedimenti-2.jpg" alt="">
+                    <div>
+                    Questi teli evocano fragilità, ma anche vita e rigenerazione continua: è molto probabile che in questo bianco siano avvenuti concepimenti, nascite e decessi.
+                    È di questa memoria che desidero parlare.
+                    È di questa memoria che desidero prendermi cura.
+                    Siamo fatti di tutte le nascite e di tutte le morti che sono accadute intorno a questo bianco che ancora abbaglia e che continuerà a sopravviverci.
+                    </div>
+                    <img class="project-img" src="img/sedimenti/sedimenti-3.jpg" alt="">
+                    <div>
+                    L'opera tenta di dare voce ad una coralità di vissuti (non sempre edificanti) principalmente legati al femminile, ma in costante dialogo con la storia di ognuno e di tutti.
+                </div>
+                    <div>
+                    Fondamentale è stato anche il legame con l'ambiente architettonico dell'installazione: la sacrestia della chiesa di Santa Caterina.
+                    Questo luogo conteneva il sacro, lo proteggeva, lo preparava ed è qui che sono rimasta a cucire durante la performance.
+                    La sacrestia, dunque, come una camera per raccogliere le forze e rigenerare il legame della valle tra le generazioni passate e quelle future.
+                    </div>
+                    <img class="project-img" src="img/sedimenti/sedimenti-4.jpg" alt="">
+                    <div>
+                    Il desiderio è stato quello di un'esperienza di arte partecipata.
+                    Durante il tempo della performance ho cucito insieme tessuti molto antichi appartenuti ad alcune famiglie della valle e ho percepito il mio lavoro come una cura (operata attraverso le garze e l'uso del filo che ha unito ciò che prima esisteva separato).
+                    Contemporaneamente non ho potuto fare a meno di portare all'interno di questa performance una parte di me - la creazione di un nido, un nuovo concepimento, una nuova nascita.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project" data-project="">
+        <div class="project-close" onclick="Clara.view('/')">✕</div>
+        <div class="project-content">
+            <div class="project-header">
+                <div class="project-title"></div>
+                <div class="project-subtitle"></div>
+                <div class="project-year"></div>
+            </div>
+            <div class="project-row">
+                <div class="project-intro">
+                    <div></div>
+                    <img class="project-img" src="img/test/test-5.jpg" alt="">
+                    <div></div>
+                </div>
+                <div class="project-description">
+                    <div>
+
+                    </div>
+                    <img class="project-img" src="img/test/test-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project" data-project="">
+        <div class="project-close" onclick="Clara.view('/')">✕</div>
+        <div class="project-content">
+            <div class="project-header">
+                <div class="project-title"></div>
+                <div class="project-subtitle"></div>
+                <div class="project-year"></div>
+            </div>
+            <div class="project-row">
+                <div class="project-intro">
+                    <div></div>
+                    <img class="project-img" src="img/test/test-5.jpg" alt="">
+                    <div></div>
+                </div>
+                <div class="project-description">
+                    <div>
+
+                    </div>
+                    <img class="project-img" src="img/test/test-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project" data-project="">
+        <div class="project-close" onclick="Clara.view('/')">✕</div>
+        <div class="project-content">
+            <div class="project-header">
+                <div class="project-title"></div>
+                <div class="project-subtitle"></div>
+                <div class="project-year"></div>
+            </div>
+            <div class="project-row">
+                <div class="project-intro">
+                    <div></div>
+                    <img class="project-img" src="img/test/test-5.jpg" alt="">
+                    <div></div>
+                </div>
+                <div class="project-description">
+                    <div>
+
+                    </div>
+                    <img class="project-img" src="img/test/test-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project" data-project="">
+        <div class="project-close" onclick="Clara.view('/')">✕</div>
+        <div class="project-content">
+            <div class="project-header">
+                <div class="project-title"></div>
+                <div class="project-subtitle"></div>
+                <div class="project-year"></div>
+            </div>
+            <div class="project-row">
+                <div class="project-intro">
+                    <div></div>
+                    <img class="project-img" src="img/test/test-5.jpg" alt="">
+                    <div></div>
+                </div>
+                <div class="project-description">
+                    <div>
+
+                    </div>
+                    <img class="project-img" src="img/test/test-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project" data-project="">
+        <div class="project-close" onclick="Clara.view('/')">✕</div>
+        <div class="project-content">
+            <div class="project-header">
+                <div class="project-title"></div>
+                <div class="project-subtitle"></div>
+                <div class="project-year"></div>
+            </div>
+            <div class="project-row">
+                <div class="project-intro">
+                    <div></div>
+                    <img class="project-img" src="img/test/test-5.jpg" alt="">
+                    <div></div>
+                </div>
+                <div class="project-description">
+                    <div>
+
+                    </div>
+                    <img class="project-img" src="img/test/test-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project" data-project="">
+        <div class="project-close" onclick="Clara.view('/')">✕</div>
+        <div class="project-content">
+            <div class="project-header">
+                <div class="project-title"></div>
+                <div class="project-subtitle"></div>
+                <div class="project-year"></div>
+            </div>
+            <div class="project-row">
+                <div class="project-intro">
+                    <div></div>
+                    <img class="project-img" src="img/test/test-5.jpg" alt="">
+                    <div></div>
+                </div>
+                <div class="project-description">
+                    <div>
+
+                    </div>
+                    <img class="project-img" src="img/test/test-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project" data-project="">
+        <div class="project-close" onclick="Clara.view('/')">✕</div>
+        <div class="project-content">
+            <div class="project-header">
+                <div class="project-title"></div>
+                <div class="project-subtitle"></div>
+                <div class="project-year"></div>
+            </div>
+            <div class="project-row">
+                <div class="project-intro">
+                    <div></div>
+                    <img class="project-img" src="img/test/test-5.jpg" alt="">
+                    <div></div>
+                </div>
+                <div class="project-description">
+                    <div>
+
+                    </div>
+                    <img class="project-img" src="img/test/test-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project" data-project="">
+        <div class="project-close" onclick="Clara.view('/')">✕</div>
+        <div class="project-content">
+            <div class="project-header">
+                <div class="project-title"></div>
+                <div class="project-subtitle"></div>
+                <div class="project-year"></div>
+            </div>
+            <div class="project-row">
+                <div class="project-intro">
+                    <div></div>
+                    <img class="project-img" src="img/test/test-5.jpg" alt="">
+                    <div></div>
+                </div>
+                <div class="project-description">
+                    <div>
+
+                    </div>
+                    <img class="project-img" src="img/test/test-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src='js/main.min.js?v=4'></script>
 </body>
 </html>
+
+<script>
+  const projects = [
+
+//{title: 'Mi interessa la crepa'},
+//{title: 'che celebra un\'estetica dell\'imperfezione'},
+//{title: 'la ferita che fa passare'},
+//{title: 'e scompone il raggio di luce'},
+
+{id: 'intima-materia', img: 'img/intima-materia/intima-materia-1.jpg', height: 250, year: '2023',title: 'Intima Materia'},
+{id: 'la-forme-fermee', img: 'img/la-forme-fermee/la-forme-fermee-1.jpg', height: 310, year: '2021',title: 'La forme fermèe'},
+{id: 'sedimenti', img: 'img/sedimenti/sedimenti-1.jpg', height: 400, year: '2021',title: 'Sedimenti'},
+{id: 'faccia', img: 'img/faccia/faccia-1.jpg', height: 180, year: '2019',title: 'Io sono l\'altra faccia di te'},
+{id: '300-grammi', img: 'img/300-grammi/300-grammi-1.jpg', height: 400, year: '2019',title: '300 grammi'},
+{id: 'ex-voto', img: 'img/ex-voto/ex-voto-1.jpg', height: 350, year: '2019',title: 'Ex Voto'},
+{id: 'legami', img: 'img/legami/legami-1.jpg', height: 250, year: '2018',title: 'Legami'},
+{id: 'lettera-occhi', img: 'img/lettera-occhi/lettera-occhi-1.jpg', height: 310, year: '2018',title: 'Lettera dai Tuoi Occhi'},
+{id: 'attraverso', img: 'img/attraverso/attraverso-2.jpg', height: 400, year: '2018',title: 'Attraverso'},
+{id: 'vanitas', img: 'img/vanitas/vanitas-1.jpg', height: 180, year: '2018',title: 'Vanitas Vanitatum et Omnia Vanitas'},
+{id: 'no-violence', img: 'img/no-violence/no-violence-1.jpg', height: 400, year: '2018',title: 'Image no violence on woman'},
+{id: 'ricorda', img: 'img/ricorda/ricorda-1.jpg', height: 350, year: '2017',title: 'Ricorda di essere stato straniero'},
+{id: 'mnemosine', img: 'img/mnemosine/mnemosine-1.jpg', height: 200, year: '2016-2017',title: 'Mnemosine'},
+{id: 'chrysalis', img: 'img/chrysalis/chrysalis-1.jpg', height: 200, year: '2016',title: 'Chrysalis'},
+{id: 'radici', img: 'img/radici/radici-1.jpg', height: 200, year: '2015-2016',title: 'Radici'},
+  ];
+
+  const container = document.querySelector('.project-list');
+
+  function getColumnCount(containerWidth) {
+    if (containerWidth < 768) return 1;
+    if (containerWidth < 1024) return 2;
+    if (containerWidth < 1440) return 3;
+    return 4;
+  }
+
+  function renderProjects() {
+    container.innerHTML = ''; // pulisci prima
+        const containerWidth = container.getBoundingClientRect().width;
+    const colCount = getColumnCount(containerWidth);
+    const columns = [];
+
+    for (let i = 0; i < colCount; i++) {
+      const col = document.createElement('div');
+      col.className = 'project-column';
+      container.appendChild(col);
+      columns.push(col);
+    }
+
+    projects.forEach((project, index) => {
+      const item = document.createElement('div');
+      item.className = 'project-item';
+      if(project.id){
+          item.setAttribute('onclick', `Clara.view('${project.id}')`);
+      }else{
+        item.classList.add('intro');
+      }
+      //item.setAttribute('style', `height: ${project.height}px;`);
+      const height = (project.img ? (Math.floor(300 + Math.random() * 300)) : 10);
+      const img  = (project.img ? `<div class="project-img" style="height:${height}px;background-image: url(${project.img})"></div>`:'');
+      const year  = (project.year ? '<div class="project-item-year">'+project.year+'</div>':'');
+      item.innerHTML = `${img}${project.title}${year}`;
+      // Inserisci in colonna a rotazione
+      columns[index % colCount].appendChild(item);
+    });
+  }
+
+  window.addEventListener('load', renderProjects);
+  window.addEventListener('resize', () => {
+    clearTimeout(window.__resizeTimeout);
+    window.__resizeTimeout = setTimeout(renderProjects, 200);
+  });
+</script>
