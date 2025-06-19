@@ -9,11 +9,7 @@
 <body>
     <header>
         <h1>Clara Daniele</h1>
-        <nav>
-            <ul>
-                <li><a onclick="Clara.view('chi-sono')">Chi sono</a></li>
-            </ul>
-        </nav>
+        <a onclick="Clara.view('chi-sono')">Chi sono</a>
     </header>
     <main>
         <div class="intro-negative">
@@ -106,7 +102,8 @@
     </main>
     <footer>
         <div>© <span class="year"></span> Clara Daniele</div>
-        <div>clara.daniele@yahoo.it</div>
+        <a href="https://www.instagram.com/claradaniele/" target="_blank">@claradaniele</div>
+        <a href="mailto:clara.daniele@yahoo.it">clara.daniele@yahoo.it</a>
     </footer>
 
     <div class="project" data-project="300-grammi">
@@ -739,6 +736,12 @@
     return 4;
   }
 
+  function isMobile() {
+    const mediaQuery = window.matchMedia('(max-width: 425px)');
+
+    return mediaQuery.matches;
+  }
+
   function renderProjects() {
     container.innerHTML = ''; // pulisci prima
         const containerWidth = container.getBoundingClientRect().width;
@@ -761,10 +764,11 @@
         item.classList.add('intro');
       }
       //item.setAttribute('style', `height: ${project.height}px;`);
-      const height = (project.img ? (Math.floor(300 + Math.random() * 300)) : 10);
+      const height = (project.img ? (Math.floor((isMobile() ? 150 : 300) + Math.random() * 300)) : 10);
       const img  = (project.img ? `<div class="project-img" style="height:${height}px;background-image: url(${project.img})"></div>`:'');
       const year  = (project.year ? '<div class="project-item-year">'+project.year+'</div>':'');
-      item.innerHTML = `${img}${project.title}${year}`;
+      const title  = (project.title ? '<div class="project-item-title">'+project.title+'</div>':'');
+      item.innerHTML = `${img}${title}${year}`;
       // Inserisci in colonna a rotazione
       columns[index % colCount].appendChild(item);
     });

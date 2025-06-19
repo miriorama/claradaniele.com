@@ -212,6 +212,10 @@ section {
             padding: 0;
         }
 
+        .project-item-title{
+            margin-right: 35px;
+        }
+
         .project-item-year{
             position: absolute;
             bottom: 4px;
@@ -357,6 +361,10 @@ footer {
     text-transform: uppercase;
     height: 120px;
     padding: 40px 80px;
+
+    a{
+        text-decoration: none;
+    }
 }
 
 @media (max-width: 1440px) {
@@ -386,7 +394,8 @@ footer {
 
 @media (max-width: 768px) {
     header {
-    padding: 12px 24px;
+    padding: 12px 40px;
+
 }
     .project .project-close {
     font-size: 2rem;
@@ -397,17 +406,31 @@ footer {
         padding: 40px 40px 80px;
     }
 
+.project .project-content .project-description>* {
+    max-width: 100%;
+}
+
     .project .project-content .project-header .project-title{
         font-size: 2.6rem;
+        line-height: 1em;
     }
     .project .project-content .project-row .project-intro{
         font-size: 2.2rem;
+        line-height: 1em;
     }
     .project-list{
-        padding: 60px;
+        padding: 40px;
     }
         .intro-negative{
             font-size: 1.6rem;
             padding: 0px 40px;
         }
+
+        footer {
+    height: auto;
+    flex-direction: column;
+    padding: 24px 40px;
+    gap: 16px;
+}
+
     }
