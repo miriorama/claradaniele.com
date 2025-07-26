@@ -150,7 +150,7 @@ class Clara {
                 item.classList.add('intro');
             }
             //item.setAttribute('style', `height: ${project.height}px;`);
-            const height = (project.img || project.video ? (Math.floor((Clara.isMobile() ? 150 : 300) + Math.random() * 300)) : 10);
+            const height = (project.img || project.video ? (Math.floor((Clara.isMobile() ? 200 : 300) + Math.random() * 300)) : 10);
             const img = (project.img ? `<div class="project-img-container"><div class="project-img" style="height:${height}px;background-image: url(${project.img})"></div></div>` : '');
             const video = (project.video ? `<div class="project-img-container" style="height:${height}px;"><video class="project-video" autoplay muted loop playsinline  src="${project.video}"></video></div>` : '');
             const year = (project.year ? '<div class="project-item-year">' + project.year + '</div>' : '');
