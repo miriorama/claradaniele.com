@@ -65,7 +65,7 @@ class Clara {
         // Se non ho passato un id vuol dire che devo chiudere
         if(!idProject) {
             // Tolgo l'overflow:hidden al body
-            $body.classList.remove('o-hidden');
+            $body.classList.remove('no-overflow');
 
             document.querySelector('.project.selected')?.classList.remove('selected');
             return;
@@ -78,7 +78,7 @@ class Clara {
         $project.classList.add('selected');
 
         // Aggiungo l'overflow:hidden al body per evitare che interferisca con lo scroll del lavoro
-        $body.classList.add('o-hidden');
+        $body.classList.add('no-overflow');
 
         new Lightbox($project.querySelectorAll('.project-img'));
     }
