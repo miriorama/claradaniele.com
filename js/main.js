@@ -6,7 +6,7 @@ class Clara {
         {id: 'la-forme-fermee', img: 'img/la-forme-fermee/la-forme-fermee-1.jpg', height: 310, year: '2021',title: 'La forme fermèe'},
         {id: 'sedimenti', img: 'img/sedimenti/sedimenti-1.jpg', height: 400, year: '2021',title: 'Sedimenti'},
         {id: 'faccia', video: 'img/faccia/faccia-3.mp4', height: 180, year: '2019',title: 'Io sono l\'altra faccia di te'},
-        {id: '300-grammi', img: 'img/300-grammi/300-grammi-1.jpg', height: 400, year: '2019',title: '300 grammi'},
+        {id: '300-grammi', video: 'img/300-grammi/300-grammi.mp4', height: 400, year: '2019',title: '300 grammi'},
         {id: 'ex-voto', img: 'img/ex-voto/ex-voto-1.jpg', height: 350, year: '2019',title: 'Ex Voto'},
         {id: 'legami', img: 'img/legami/legami-1.jpg', height: 250, year: '2018',title: 'Legami'},
         {id: 'lettera-occhi', img: 'img/lettera-occhi/lettera-occhi-1.jpg', height: 310, year: '2018',title: 'Lettera dai Tuoi Occhi'},
@@ -15,7 +15,7 @@ class Clara {
         {id: 'no-violence', img: 'img/no-violence/no-violence-1.jpg', height: 400, year: '2018',title: 'Image no violence on woman'},
         {id: 'ricorda', img: 'img/ricorda/ricorda-1.jpg', height: 350, year: '2017',title: 'Ricorda di essere stato straniero'},
         {id: 'mnemosine', img: 'img/mnemosine/mnemosine-1.jpg', height: 200, year: '2016-2017',title: 'Mnemosine'},
-        {id: 'chrysalis', img: 'img/chrysalis/chrysalis-1.jpg', height: 200, year: '2016',title: 'Chrysalis'},
+        {id: 'chrysalis', img: 'img/chrysalis/chrysalis-13.jpg', height: 200, year: '2016',title: 'Chrysalis'},
         {id: 'radici', img: 'img/radici/radici-1.jpg', height: 200, year: '2015-2016',title: 'Radici'},
     ];
 

@@ -410,17 +410,19 @@ section {
     user-select: none;
 }
 .lightbox-close {
-    top: 40px;
-    right: 80px;
+    top: 24px;
+    right: 32px;
 }
 .lightbox-prev {
-    left: 100px;
-    top: 50%;
+    left: 32px;
+    bottom: 0;
+    top: auto;
     transform: translateY(-50%);
 }
 .lightbox-next {
-    right: 100px;
-    top: 50%;
+    right: 32px;
+    bottom: 0;
+    top: auto;
     transform: translateY(-50%);
 }
 
@@ -465,6 +467,15 @@ footer {
     }
 }
 
+@media (max-width: 1024px) {
+    .lightbox-overlay img {
+        max-height: calc(100% - 160px);
+    }
+    .lightbox-btn {
+        font-size: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
     header {
     padding: 12px 40px;
@@ -506,4 +517,4 @@ footer {
     gap: 16px;
 }
 
-    }
+}
