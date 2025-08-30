@@ -22,13 +22,13 @@ class Clara {
     static init() {
         Clara.setYear();
 
-        window.addEventListener('popstate', (event) => {
-            Clara.view();
-        });
-
-        Clara.view();
+        //window.addEventListener('popstate', (event) => {
+        //    console.log('pushstate');
+        //    Clara.view();
+        //});
 
         window.addEventListener('load', Clara.renderProjects);
+        Clara.view();
 
         //Clara.prevWidth = window.innerWidth;
         //window.addEventListener('resize', () => {
