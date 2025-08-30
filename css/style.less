@@ -325,9 +325,19 @@ section {
             border-right: 1px solid @black;
             padding-right: 40px;
 
-            img{
+            .project-intro-text{
+                margin-bottom: 32px;
+            }
+
+            .project-media-wrapper{
+                width: 100%;
                 align-self: flex-start;
-                margin: 16px 0;
+            }
+
+            .project-media{
+                width: 100%;
+                align-self: flex-start;
+                max-height: none;
             }
         }
         .project-description{
@@ -349,7 +359,25 @@ section {
         }
     }
 
-    .project-img{
+    .project-media-wrapper{
+        position:relative;
+        display:inline-block;
+
+        .project-media-icon{
+            position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
+        }
+
+
+        &.double{
+            max-height: none;
+            width: 50%;
+        }
+        &.full{
+            max-height: none;
+            width: 100%;
+        }
+    }
+    .project-media{
         max-height: 300px;
         object-fit: cover;
         border-radius: 40px;
@@ -397,7 +425,7 @@ section {
     opacity: 1;
     visibility: visible;
 }
-.lightbox-overlay img {
+.lightbox-overlay img,.lightbox-overlay video {
     max-width: 90%;
     max-height: 90%;
     border-radius: 40px;
@@ -428,6 +456,39 @@ section {
     bottom: 0;
     top: auto;
     transform: translateY(-50%);
+}
+
+.lightbox-video-overlay {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    cursor: pointer;
+    z-index: 2;
+}
+.lightbox-video-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lightbox-overlay video {
+    max-width: 80vw;
+    max-height: 80vh;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.lightbox-media-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 footer {
