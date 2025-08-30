@@ -35,7 +35,7 @@ class Clara {
             const currentWidth = window.innerWidth;
             if(currentWidth > Clara.prevWidth) {
                 clearTimeout(window.__resizeTimeout);
-                window.__resizeTimeout = setTimeout(renderProjects, 200);
+                window.__resizeTimeout = setTimeout(Clara.renderProjects, 200);
             }
             Clara.prevWidth = currentWidth;
         });
