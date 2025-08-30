@@ -30,15 +30,15 @@ class Clara {
 
         window.addEventListener('load', Clara.renderProjects);
 
-        Clara.prevWidth = window.innerWidth;
-        window.addEventListener('resize', () => {
-            const currentWidth = window.innerWidth;
-            if(currentWidth > Clara.prevWidth) {
-                clearTimeout(window.__resizeTimeout);
-                window.__resizeTimeout = setTimeout(Clara.renderProjects, 200);
-            }
-            Clara.prevWidth = currentWidth;
-        });
+        //Clara.prevWidth = window.innerWidth;
+        //window.addEventListener('resize', () => {
+        //    const currentWidth = window.innerWidth;
+        //    if(currentWidth > Clara.prevWidth) {
+        //        clearTimeout(window.__resizeTimeout);
+        //        window.__resizeTimeout = setTimeout(Clara.renderProjects, 200);
+        //    }
+        //    Clara.prevWidth = currentWidth;
+        //});
     }
 
     static view(viewId = null) {
