@@ -5,7 +5,7 @@ class Clara {
         {id: 'intima-materia', video: 'img/intima-materia/intima-materia.mp4', height: 250, year: '2023',title: 'Intima Materia'},
         {id: 'la-forme-fermee', img: 'img/la-forme-fermee/la-forme-fermee-1.jpg', height: 310, year: '2021',title: 'La forme fermèe'},
         {id: 'sedimenti', img: 'img/sedimenti/sedimenti-1.jpg', height: 400, year: '2021',title: 'Sedimenti'},
-        {id: 'faccia', video: 'img/faccia/faccia-3.mp4', height: 180, year: '2019',title: 'Io sono l\'altra faccia di te'},
+        {id: 'faccia', video: 'img/faccia/faccia.mp4', height: 180, year: '2019',title: 'Io sono l\'altra faccia di te'},
         {id: '300-grammi', video: 'img/300-grammi/300-grammi.mp4', height: 400, year: '2019',title: '300 grammi'},
         {id: 'ex-voto', img: 'img/ex-voto/ex-voto-1.jpg', height: 350, year: '2019',title: 'Ex Voto'},
         {id: 'legami', img: 'img/legami/legami-1.jpg', height: 250, year: '2018',title: 'Legami'},
@@ -22,10 +22,10 @@ class Clara {
     static init() {
         Clara.setYear();
 
-        //window.addEventListener('popstate', (event) => {
-        //    console.log('pushstate');
-        //    Clara.view();
-        //});
+        window.addEventListener('popstate', (event) => {
+            console.log('pushstate');
+            Clara.view();
+        });
 
         window.addEventListener('load', Clara.renderProjects);
         Clara.view();
@@ -42,6 +42,9 @@ class Clara {
     }
 
     static view(viewId = null) {
+
+        document.querySelector('.lightbox-overlay')?.remove();
+
         if (viewId) {
             history.pushState({}, viewId, (viewId !== '/' ? '?' + viewId : '/'));
         } else {
