@@ -227,6 +227,7 @@ section {
             border-radius: 40px;
             overflow: hidden;
             position: relative;
+            background-color: #e3e5e7;
 
             .project-img{
                 width: 100%;
@@ -498,6 +499,27 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &.play:after{
+        height: 48px;
+        width: 48px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        pointer-events:none;
+        content: url( '/img/play.svg' );
+    }
+    &.pause:after{
+        height: 48px;
+        width: 48px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        pointer-events:none;
+        content: url( '/img/pause.svg' );
+    }
 }
 .lightbox-overlay video {
     max-width: 80vw;

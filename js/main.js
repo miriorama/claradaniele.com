@@ -22,8 +22,7 @@ class Clara {
     static init() {
         Clara.setYear();
 
-        window.addEventListener('popstate', (event) => {
-            console.log('pushstate');
+        window.addEventListener('popstate', () => {
             Clara.view();
         });
 
@@ -41,25 +40,55 @@ class Clara {
         //});
     }
 
-    static view(viewId = null) {
-
+    static async view(viewId = null) {
         document.querySelector('.lightbox-overlay')?.remove();
 
         if (viewId) {
             history.pushState({}, viewId, (viewId !== '/' ? '?' + viewId : '/'));
         } else {
             const urlParams = new URLSearchParams(window.location.search);
-            let $projectList = document.querySelectorAll('.project');
-            for (const $project of $projectList) {
-                if(urlParams.has($project.getAttribute('data-project'))) {
-                    viewId = $project.getAttribute('data-project');
-                }
+            // Prendi il primo parametro della query come id progetto
+            const firstParam = urlParams.keys().next();
+            if (!firstParam.done) {
+                viewId = firstParam.value;
             }
-
-            //viewId = window.location.search.substring(1);
         }
 
-        Clara.showProject((viewId === '/' ? null : viewId));
+        if (viewId && viewId !== '/') {
+            // Carica l'HTML del progetto via AJAX e poi mostra il progetto
+            try {
+                await Clara.loadProjectHtml(viewId);
+            } catch (e) {
+                console.error('Errore nel caricamento del progetto', viewId, e);
+            }
+            Clara.showProject(viewId);
+        } else {
+            Clara.showProject(null);
+        }
+    }
+
+    static async loadProjectHtml(idProject) {
+        const selector = `[data-project="${idProject}"]`;
+        let $project = document.querySelector(selector);
+
+        // Recupera HTML solo se non presente o se vogliamo evitare i template esistenti
+        // In ogni caso, preferiamo l'HTML da /data/{id}.html
+        const res = await fetch(`data/${idProject}.html`, { cache: 'no-cache' });
+        if (!res.ok) {
+            console.warn(`Impossibile caricare data/${idProject}.html (status ${res.status})`);
+            return;
+        }
+        const html = await res.text();
+
+        if (!$project) {
+            $project = document.createElement('div');
+            $project.className = 'project';
+            $project.setAttribute('data-project', idProject);
+            document.body.appendChild($project);
+        }
+
+        // Sostituisci il contenuto con quello caricato
+        $project.innerHTML = html;
     }
 
     static showProject(idProject) {
@@ -209,25 +238,12 @@ class Lightbox {
 
         // Icona play/pause SVG
         this.iconPlay = document.createElement('div');
-        this.iconPlay.className = 'lightbox-video-icon';
-        this.iconPlay.innerHTML = `
-            <svg width="64" height="64" viewBox="0 0 64 64">
-                <circle cx="32" cy="32" r="30" fill="rgba(0,0,0,0.5)"/>
-                <polygon points="26,20 26,44 46,32" fill="#fff"/>
-            </svg>
-        `;
+        this.iconPlay.className = 'lightbox-video-icon play';
         this.videoOverlay.appendChild(this.iconPlay);
 
         this.iconPause = document.createElement('div');
-        this.iconPause.className = 'lightbox-video-icon';
+        this.iconPause.className = 'lightbox-video-icon pause';
         this.iconPause.style.display = 'none';
-        this.iconPause.innerHTML = `
-            <svg width="64" height="64" viewBox="0 0 64 64">
-                <circle cx="32" cy="32" r="30" fill="rgba(0,0,0,0.5)"/>
-                <rect x="24" y="20" width="6" height="24" fill="#fff"/>
-                <rect x="34" y="20" width="6" height="24" fill="#fff"/>
-            </svg>
-        `;
         this.videoOverlay.appendChild(this.iconPause);
 
         this.btnClose = document.createElement('div');
