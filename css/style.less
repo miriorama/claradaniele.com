@@ -338,9 +338,30 @@ section {
             .project-media{
                 width: 100%;
                 height: auto;
-
+                position: relative;
                 align-self: flex-start;
                 max-height: 100%;
+
+                img{
+                    //max-height: 300px;
+                    object-fit: cover;
+                    border-radius: 40px;
+                    width: 100%;
+                    height: auto;
+                }
+
+                &.project-video{
+                    &:after{
+                        height: 48px;
+                        width: 48px;
+                        position:absolute;
+                        top:50%;
+                        left:50%;
+                        transform:translate(-50%,-50%);
+                        pointer-events:none;
+                        content: url( '/img/play.svg' );
+                    }
+                }
             }
         }
         .project-description{

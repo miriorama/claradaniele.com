@@ -80,6 +80,13 @@ class Clara {
         }
         $project.classList.add('selected');
 
+        // tasto chiudi
+        let $projectClose = document.createElement('div');
+        $projectClose.className = 'project-close';
+        $projectClose.setAttribute('onclick',"Clara.view('/')");
+        $projectClose.innerHTML = '✕'
+        $project.appendChild($projectClose);
+
         // Aggiungo l'overflow:hidden al body per evitare che interferisca con lo scroll del lavoro
         $body.classList.add('no-overflow');
 
@@ -315,24 +322,36 @@ class Lightbox {
     show(index) {
         this.currentIndex = index;
         const el = this.mediaElements[this.currentIndex];
+
         // Nascondi tutto
         this.imgElement.style.display = 'none';
         this.videoElement.style.display = 'none';
         this.videoOverlay.style.display = 'none';
         this.videoElement.pause();
+
         // Mostra immagine o video
-        if (el.tagName === 'IMG') {
-            this.imgElement.src = el.src;
-            this.imgElement.style.display = '';
-        } else if (el.tagName === 'VIDEO') {
-            this.videoElement.src = el.src || el.querySelector('source')?.src || '';
+        if(el.classList.contains('project-video')){
+            let src = el.getAttribute('data-src') || '';
+
+            this.videoElement.src = src || '';
             this.videoElement.style.display = '';
             this.videoOverlay.style.display = '';
             this.iconPlay.style.display = '';
             this.iconPause.style.display = 'none';
             // Avvia il video in automatico
             this.videoElement.play();
+        }else{
+            this.imgElement.src = el.src;
+            this.imgElement.style.display = '';
         }
+
+        let $img = el.querySelector('img');
+        if($img){
+
+        }else{
+
+        }
+
         this.overlay.classList.add('show');
     }
 
