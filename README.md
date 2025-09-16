@@ -1,5 +1,5 @@
 claradaniele.com
-500€ 15/18h
+500€ 17/18h
 
 20250327 1h scraping contenuti
 20250511 3h primo prototipo
@@ -10,6 +10,7 @@ claradaniele.com
 20250714 2h lightbox e nuovo progetto
 20250714 1h video 300g backup da wix
 20250830 2h video in lightbox
+20250913 2h nuove foto e fetch
 
 ### Todo
 - frase in alto: da togliere
