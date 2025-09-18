@@ -89,6 +89,21 @@ class Clara {
 
         // Sostituisci il contenuto con quello caricato
         $project.innerHTML = html;
+
+        const $projectContent = $project.querySelector('.project-content');
+
+        if ($projectContent) {
+            $projectContent.classList.remove('project-content--entered');
+            $projectContent.classList.add('project-content--will-animate');
+
+            // Forza un reflow per applicare lo stato iniziale prima della transizione
+            void $projectContent.offsetWidth;
+
+            $projectContent.classList.add('project-content--entered');
+            $projectContent.addEventListener('transitionend', () => {
+                $projectContent.classList.remove('project-content--will-animate');
+            }, { once: true });
+        }
     }
 
     static showProject(idProject) {

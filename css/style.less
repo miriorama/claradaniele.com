@@ -295,6 +295,18 @@ section {
 
     .project-content{
         padding: 80px 80px 160px;
+        transition: opacity .4s ease, transform .4s ease;
+        transform: translateY(0);
+
+        &.project-content--will-animate {
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        &.project-content--will-animate.project-content--entered {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         .project-header{
             width: 100%;
