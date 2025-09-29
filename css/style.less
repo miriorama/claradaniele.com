@@ -38,7 +38,18 @@ body {
     padding: 0;
 
     &.no-overflow{
+        position: fixed;
         overflow-y: hidden;
+
+         .list:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #ebeaea;
+        }
     }
 }
 
