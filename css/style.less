@@ -30,7 +30,7 @@ html {
 
 body {
     font-family: 'Coconat', sans-serif;
-    background: url(../img/noise.png), radial-gradient(circle, #ffffff 0%, #e3e5e7 100%) #ebeaea;
+    background: radial-gradient(circle, #ffffff 0%, #e3e5e7 100%) #ebeaea;
     background-size: 150px, 100% 100vh;
     background-attachment: fixed;
     color: @black;
@@ -62,18 +62,19 @@ a{
 }
 
 header {
-    padding: 40px 80px;
-    height: 120px;
+    padding: 0 0 16px 0;
+    margin: 40px 80px 80px;
+    border-bottom: 1px dotted @black;
+    //height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: @black;
-    font-family: Helvetica, sans-serif;
+    font-family: Coconat, sans-serif;
     font-weight: 100;
-    text-transform: uppercase;
 
     h1 {
-        font-family: Helvetica, sans-serif;
+        font-family: Coconat, sans-serif;
         font-size: 1rem;
         font-weight: 100;
         margin: 0;
@@ -91,7 +92,7 @@ header {
                 a {
                     color: @black;
                     text-decoration: none;
-                    font-family: Helvetica, sans-serif;
+                    font-family: 'Coconat', sans-serif;
                     font-size: 1rem;
                     font-weight: 100;
                     cursor: pointer;
@@ -171,7 +172,7 @@ main {
         font-weight: bold;
         padding-bottom: 8px;
         margin-bottom: 40px;
-        border-bottom: 1px solid @black;
+        border-bottom: 1px dotted @black;
         position: relative;
         cursor: pointer;
 
@@ -253,7 +254,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    border: 1px dotted @black;
     padding: 4px 24px;
     z-index: 2000;
     justify-self: center;
@@ -296,7 +297,7 @@ main {
 
     .project-content{
         padding: 80px 80px 160px;
-        transition: opacity .4s ease, transform .4s ease;
+        transition: opacity .4s @cubicBezier, transform .4s @cubicBezier;
         transform: translateY(0);
 
         &.project-content--will-animate {
@@ -312,7 +313,7 @@ main {
         .project-header{
             width: 100%;
             padding-bottom: 32px;
-            border-bottom: 1px solid @black;
+            border-bottom: 1px dotted @black;
             margin-bottom: 40px;
 
             .project-title{
@@ -337,7 +338,7 @@ main {
             width: calc(30% - 1px);
             flex-direction: column;
             font-size: 3rem;
-            border-right: 1px solid @black;
+            border-right: 1px dotted @black;
             padding-right: 40px;
 
             .project-intro-text{
@@ -467,7 +468,7 @@ main {
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s @cubicBezier;
     z-index: 9999;
 }
 .lightbox-overlay.show {
@@ -478,13 +479,13 @@ main {
     max-width: 90%;
     max-height: 90%;
     border-radius: 40px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s @cubicBezier;
 }
 .lightbox-btn {
     position: absolute;
     top: 20px;
     color: @white;
-    border: 1px solid white;
+    border: 1px dotted white;
     border-radius: 100%;
     height: 40px;
     width: 40px;
@@ -572,12 +573,12 @@ footer {
     display: flex;
     align-items: center;
     justify-content:space-between;
-    font-family: Helvetica, sans-serif !important;
+    font-family: Coconat, serif;
     font-weight: 100;
     color: @black;
-    text-transform: uppercase;
-    height: 120px;
-    padding: 40px 80px;
+    padding: 16px 0 16px;
+    margin: 120px 80px 40px;
+    border-top: 1px dotted @black;
 
     a{
         text-decoration: none;
@@ -593,7 +594,7 @@ footer {
             width: 100%;
             border-right: none;
             padding: 0;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px dotted #333;
             margin-bottom: 40px;
             padding-bottom: 40px;
         }
@@ -620,9 +621,8 @@ footer {
 
 @media (max-width: 768px) {
     header {
-    padding: 12px 40px;
-
-}
+        margin: 40px;
+    }
     .project .project-content{
         padding: 40px 40px 80px;
     }
@@ -640,7 +640,7 @@ footer {
         line-height: 1em;
     }
     .list{
-        padding: 40px;
+        padding: 0 40px;
     }
         .intro-negative{
             font-size: 1.6rem;
@@ -650,7 +650,7 @@ footer {
         footer {
     height: auto;
     flex-direction: column;
-    padding: 24px 40px;
+    margin: 40px;
     gap: 16px;
 }
 
