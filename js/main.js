@@ -42,6 +42,7 @@ class Clara {
 
     static async view(viewId = null) {
         document.querySelector('.lightbox-overlay')?.remove();
+        document.querySelector('.project-close')?.remove();
 
         if (viewId) {
             history.pushState({}, viewId, (viewId !== '/' ? '?' + viewId : '/'));
@@ -128,8 +129,8 @@ class Clara {
         let $projectClose = document.createElement('div');
         $projectClose.className = 'project-close';
         $projectClose.setAttribute('onclick',"Clara.view('/')");
-        $projectClose.innerHTML = '✕'
-        $project.appendChild($projectClose);
+        $projectClose.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/></svg>&nbsp;&nbsp;&nbsp;Progetti'
+        $body.appendChild($projectClose);
 
         // Aggiungo l'overflow:hidden al body per evitare che interferisca con lo scroll del lavoro
         $body.classList.add('no-overflow');
@@ -263,17 +264,17 @@ class Lightbox {
 
         this.btnClose = document.createElement('div');
         this.btnClose.className = 'lightbox-btn lightbox-close';
-        this.btnClose.innerText = '✕';
+        this.btnClose.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/></svg>';
         this.overlay.appendChild(this.btnClose);
 
         this.btnPrev = document.createElement('div');
         this.btnPrev.className = 'lightbox-btn lightbox-prev';
-        this.btnPrev.innerText = '⟵';
+        this.btnPrev.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/></svg>';
         this.overlay.appendChild(this.btnPrev);
 
         this.btnNext = document.createElement('div');
         this.btnNext.className = 'lightbox-btn lightbox-next';
-        this.btnNext.innerText = '⟶';
+        this.btnNext.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/></svg>';
         this.overlay.appendChild(this.btnNext);
 
         document.body.appendChild(this.overlay);
@@ -288,6 +289,11 @@ class Lightbox {
             if (e.target === this.overlay || e.target === this.btnClose) {
                 this.hide();
             }
+        });
+
+        this.btnClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.hide();
         });
 
         this.btnNext.addEventListener('click', (e) => {

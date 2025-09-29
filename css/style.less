@@ -38,7 +38,6 @@ body {
     padding: 0;
 
     &.no-overflow{
-        position: fixed;
         overflow-y: hidden;
 
          .list:after {
@@ -233,6 +232,33 @@ main {
     }
 }
 
+.project-close{
+    cursor: pointer;
+    position: fixed;
+
+    top: 16px;
+    right: 16px;
+    width: auto;
+    //height: 40px;
+
+    top: auto;
+    height: 40px;
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    background-color: #ebeaea;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 4px 24px;
+    z-index: 2000;
+    justify-self: center;
+    }
+
 .project{
     position: fixed;
     inset: 0;
@@ -266,13 +292,7 @@ main {
         }
     }
 
-    .project-close{
-        position: absolute;
-        font-size: 3rem;
-        top: 40px;
-        right: 80px;
-        cursor: pointer;
-    }
+
 
     .project-content{
         padding: 80px 80px 160px;
@@ -464,7 +484,13 @@ main {
     position: absolute;
     top: 20px;
     color: @white;
-    border: none;
+    border: 1px solid white;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     font-size: 3rem;
     z-index: 10000;
@@ -596,11 +622,6 @@ footer {
     header {
     padding: 12px 40px;
 
-}
-    .project .project-close {
-    font-size: 2rem;
-    top: 12px;
-    right: 24px;
 }
     .project .project-content{
         padding: 40px 40px 80px;
