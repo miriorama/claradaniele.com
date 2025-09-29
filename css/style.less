@@ -105,36 +105,6 @@ main {
     overflow: hidden;
 }
 
-.inline-img{
-    display: inline-block;
-    background-color: @white;
-    background-image:url(img/chrysalis.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 160px;
-    height: 80px;
-    margin: 0 24px;
-    overflow: hidden;
-    border-radius: 40px;
-    transition: .3s @cubicBezier;
-    cursor: pointer;
-
-    &:hover{
-        width: 250px;
-    }
-}
-
-
-section {
-    padding: 0 80px;
-
-    min-height: calc(100vh - 368px);
-
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-}
-
 .intro-negative{
     display: block;
     padding: 0 30vw;
@@ -167,14 +137,7 @@ section {
     ;
 }
 
-.item {
-  background: #eee;
-  padding: 1rem;
-  border-radius: 8px;
-  break-inside: avoid; /* Aiuta a prevenire la rottura in alcune strategie */
-}
-
-.project-list{
+.list{
     padding: 0 80px;
 
 
@@ -182,14 +145,14 @@ section {
     gap: 2rem;
 
 
-    .project-column {
+    .list-column {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     flex: 1;
     }
 
-    .project-item{
+    .list-item{
         break-inside: avoid;
         display: flex;
         width: 100%;
@@ -211,25 +174,25 @@ section {
             padding: 0;
         }
 
-        .project-item-title{
+        .list-item-title{
             margin-right: 35px;
         }
 
-        .project-item-year{
+        .list-item-year{
             position: absolute;
             bottom: 4px;
             right: 0;
             font-size: .8rem;
         }
 
-        .project-img-container{
+        .list-img-container{
             margin-bottom: 12px;
             border-radius: 40px;
             overflow: hidden;
             position: relative;
             background-color: #e3e5e7;
 
-            .project-img{
+            .list-img{
                 width: 100%;
                 height: 100%;
                 background-position: center;
@@ -237,7 +200,7 @@ section {
                 background-size: cover;
                 transition: .6s @cubicBezier;
             }
-            .project-video{
+            .list-video{
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -250,8 +213,8 @@ section {
 
 
         &:hover{
-            .project-img-container{
-                .project-img{
+            .list-img-container{
+                .list-img{
                     transform: scale(1.1);
                 }
             }
@@ -261,11 +224,18 @@ section {
 
 .project{
     position: fixed;
+    inset: 0;
     z-index: 100;
     top: 0;
     left: 0;
     right: 0;
-    height: 100%;
+    /* fallback vecchio */
+    height: 100vh;
+    /* iOS 15+: small viewport (evita barra) */
+    height: 100svh;
+    /* modern: dinamico al cambio barra/keyboard */
+    height: 100dvh;
+
     background-color: @white;
     color: @black;
     transition: .3s @cubicBezier;
@@ -352,7 +322,6 @@ section {
                 width: 100%;
                 height: auto;
                 position: relative;
-                align-self: flex-start;
                 max-height: 100%;
 
                 img{
@@ -387,7 +356,7 @@ section {
             align-self: flex-start;
 
             img{
-                align-self: flex-start;
+                //align-self: flex-start;
             }
 
             > * {
@@ -398,10 +367,20 @@ section {
 
     .project-media-wrapper{
         position:relative;
-        display:inline-block;
+        display:inline-flex;
+        overflow:hidden;
+        border-radius:40px;
+        margin-top: 8px;
+        max-height: 400px;
 
         .project-media-icon{
             position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
+        }
+
+        &:hover {
+            .project-media{
+                transform: scale(1.1);
+            }
         }
 
 
@@ -415,11 +394,13 @@ section {
         }
     }
     .project-media{
-        max-height: 300px;
         object-fit: cover;
-        border-radius: 40px;
-        margin-top: 8px;
+        height: auto;
+        width: 100%;
+        align-self: auto;
         cursor: pointer;
+        transition: transform .4s cubic-bezier(.645, .045, .355, 1);
+        will-change: transform;
 
         &.double{
             max-height: none;
@@ -547,6 +528,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
 }
 
 footer {
@@ -625,7 +607,7 @@ footer {
         font-size: 2.2rem;
         line-height: 1em;
     }
-    .project-list{
+    .list{
         padding: 40px;
     }
         .intro-negative{

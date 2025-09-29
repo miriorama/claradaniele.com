@@ -182,7 +182,7 @@ class Clara {
     }
 
     static renderProjects() {
-        let container = document.querySelector('.project-list');
+        let container = document.querySelector('.list');
         container.innerHTML = ''; // pulisci prima
         const containerWidth = container.getBoundingClientRect().width;
         const colCount = Clara.getColumnCount(containerWidth);
@@ -190,14 +190,14 @@ class Clara {
 
         for (let i = 0; i < colCount; i++) {
             const col = document.createElement('div');
-            col.className = 'project-column';
+            col.className = 'list-column';
             container.appendChild(col);
             columns.push(col);
         }
 
         Clara.projects.forEach((project, index) => {
             const item = document.createElement('div');
-            item.className = 'project-item';
+            item.className = 'list-item';
             if (project.id) {
                 item.setAttribute('onclick', `Clara.view('${project.id}')`);
             } else {
@@ -205,10 +205,10 @@ class Clara {
             }
             //item.setAttribute('style', `height: ${project.height}px;`);
             const height = (project.img || project.video ? (Math.floor((Clara.isMobile() ? 200 : 300) + Math.random() * 300)) : 10);
-            const img = (project.img ? `<div class="project-img-container"><div class="project-img" style="height:${height}px;background-image: url(${project.img})"></div></div>` : '');
-            const video = (project.video ? `<div class="project-img-container" style="height:${height}px;"><video class="project-video" autoplay muted loop playsinline  src="${project.video}"></video></div>` : '');
-            const year = (project.year ? '<div class="project-item-year">' + project.year + '</div>' : '');
-            const title = (project.title ? '<div class="project-item-title">' + project.title + '</div>' : '');
+            const img = (project.img ? `<div class="list-img-container"><div class="list-img" style="height:${height}px;background-image: url(${project.img})"></div></div>` : '');
+            const video = (project.video ? `<div class="list-img-container" style="height:${height}px;"><video class="list-video" autoplay muted loop playsinline  src="${project.video}"></video></div>` : '');
+            const year = (project.year ? '<div class="list-item-year">' + project.year + '</div>' : '');
+            const title = (project.title ? '<div class="list-item-title">' + project.title + '</div>' : '');
             item.innerHTML = `${img}${video}${title}${year}`;
             // Inserisci in colonna a rotazione
             columns[index % colCount].appendChild(item);
